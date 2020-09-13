@@ -1,5 +1,5 @@
 import random
-from functions.functions import yes, user_answer, number_is_pair, is_right
+from functions.functions import yes, user_answer, number_is_pair, is_right, solve_simple_function
 from common.common import start_image
 
 class MathGame:
@@ -27,11 +27,20 @@ class MathGame:
         answer = yes(user_answer())
         print(is_right(value=right_answer, answer=answer))
 
+    def second_question(self):
+        question_function = f"9x + 4 = 1"
+        print(f"Solve simple function: {question_function}\nFind value x!!!")
+        result = round(solve_simple_function(question_function), 2)
+        users_answer = float(input("Enter value of x:\n"))
+        print(is_right(result, users_answer))
+
+
     def run(self):
         self.validate_is_number()
         result = self.random_multiply()
         print(f"Your new number is {result}")
         self.first_question()
+        self.second_question()
 
 
 if __name__ == '__main__':
