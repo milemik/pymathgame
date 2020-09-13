@@ -1,5 +1,5 @@
 import pytest
-from functions.functions import number_is_pair, yes, is_right
+from functions.functions import number_is_pair, yes, is_right, solve_simple_function
 
 
 def test_num_is_pair():
@@ -32,3 +32,31 @@ def tes_is_right():
     assert is_right(wrong_value, wrong_answer) == wrong
     assert is_right(wrong_value, right_answer) == wrong
     assert is_right(right_value, wrong_answer) == wrong
+
+def test_solve_function():
+    """
+    Imamo funkciju ax + b = c
+    gde su a,b i c neke konstante, x je nepoznata
+    RESENJE:
+        ax +/- b = c
+        ax = c -/+ b
+        x = (c -/+ b)/a
+    :return:
+    """
+    a = 3
+    b = 2
+    c = 0
+    simple_func_1 = f'{a}x+{b}={c}'
+    simple_func_2 = f'{a}x-{b}={c}'
+    x1 = solve_simple_function(simple_func_1)
+    x2 = solve_simple_function(simple_func_2)
+
+    r1 = ((a*x1) + b)
+    r2 = ((a*x2) - b)
+    assert r1 == c
+    assert r2 == c
+
+
+
+
+

@@ -20,3 +20,14 @@ def is_right(value, answer):
     if value == answer:
         return "Nice answer. Are you a programmer???"
     return "EEE wrong answer!"
+
+
+def solve_simple_function(simple_func):
+    import re
+    numbers = re.findall('[0-9]', simple_func)
+    a, b, c = [int(n) for n in numbers]
+    if '+' in simple_func:
+        x = (c - b)/a
+    if '-' in simple_func:
+        x = (c + b) / a
+    return x
