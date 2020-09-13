@@ -1,9 +1,11 @@
 import random
-from functions import yes, user_answer, number_is_pair, is_right
+from functions.functions import yes, user_answer, number_is_pair, is_right
+from common.common import start_image
 
 class MathGame:
 
     def __init__(self):
+        start_image()
         self.first_number = input("Enter some random number:\n")
 
     def validate_is_number(self):
@@ -16,10 +18,11 @@ class MathGame:
 
     def random_multiply(self):
         """Get some random number between 1 and 50 and multiply it by our number"""
-        return random.randint(1, 50) * self.first_number
+        self.random_num = random.randint(1, 50) * self.first_number
+        return self.random_num
 
     def first_question(self):
-        right_answer = number_is_pair(self.random_multiply())
+        right_answer = number_is_pair(self.random_num)
         print("Is your new digital a pair number?\n")
         answer = yes(user_answer())
         print(is_right(value=right_answer, answer=answer))
