@@ -15,6 +15,7 @@ def yes(some_answer):
         return False
     raise ValueError("Please enter valid answer")
 
+
 def is_right(value, answer):
     if value == answer:
         return "Nice answer. Are you a programmer???"
