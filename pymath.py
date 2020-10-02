@@ -1,5 +1,5 @@
 import random
-from functions.functions import yes, user_answer, number_is_pair, is_right, solve_simple_function
+from functions.functions import yes, user_answer, number_is_pair, is_right, solve_simple_function, pythagora_result
 from common.common import start_image
 
 class MathGame:
@@ -34,6 +34,12 @@ class MathGame:
         users_answer = float(input("Enter value of x:\n"))
         print(is_right(result, users_answer))
 
+    def third_question(self):
+        pythagora_formula = "a2 + b2 = c2"
+        print(f"Find c if a=3 and b=10. Form = {pythagora_formula}")
+        result = round(pythagora_result(3, 10), 2)
+        user_answer = float(input("Enter value of x:\n").replace(',', '.'))
+        print(is_right(result, user_answer))
 
     def run(self):
         self.validate_is_number()
@@ -41,6 +47,7 @@ class MathGame:
         print(f"Your new number is {result}")
         self.first_question()
         self.second_question()
+        self.third_question()
 
 
 if __name__ == '__main__':

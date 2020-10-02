@@ -31,3 +31,7 @@ def solve_simple_function(simple_func):
     if '-' in simple_func:
         x = (c + b) / a
     return x
+
+
+def pythagora_result(a, b):
+    return a*a + b*b

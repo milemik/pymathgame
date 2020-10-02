@@ -1,5 +1,5 @@
 import pytest
-from functions.functions import number_is_pair, yes, is_right, solve_simple_function
+from functions.functions import number_is_pair, yes, is_right, solve_simple_function, pythagora_result
 
 
 def test_num_is_pair():
@@ -33,6 +33,7 @@ def tes_is_right():
     assert is_right(wrong_value, right_answer) == wrong
     assert is_right(right_value, wrong_answer) == wrong
 
+
 def test_solve_function():
     """
     Imamo funkciju ax + b = c
@@ -57,6 +58,11 @@ def test_solve_function():
     assert r2 == c
 
 
+def test_third_find_c():
+    # setup
+    a = 3
+    b = 4
 
-
-
+    expected_result = a*a + b*b
+    result = pythagora_result(a, b)
+    assert result == expected_result
