@@ -1,6 +1,6 @@
 import pytest
 from functions.functions import number_is_pair, yes, is_right, solve_simple_function, pythagora_result
-
+import math
 
 def test_num_is_pair():
     no_pair_num = 3485
@@ -63,6 +63,6 @@ def test_third_find_c():
     a = 3
     b = 4
 
-    expected_result = a*a + b*b
+    expected_result = math.sqrt(a*a + b*b)
     result = pythagora_result(a, b)
     assert result == expected_result

@@ -1,3 +1,6 @@
+import math
+
+
 def number_is_pair(value):
     if value % 2 == 0:
         return True
@@ -34,4 +37,4 @@ def solve_simple_function(simple_func):
 
 
 def pythagora_result(a, b):
-    return a*a + b*b
+    return math.sqrt(a*a + b*b)
